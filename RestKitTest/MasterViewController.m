@@ -8,6 +8,10 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import <RestKit/CoreData.h>
+#import <RestKit/RestKit.h>
+#import "Train.h"
+#import "Station.h"
 
 @interface MasterViewController ()
 
@@ -23,10 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
+    
+    [self requestData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,14 +66,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+    return self.departures.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    Train *train = self.departures[indexPath.row];
+    cell.textLabel.text = train.destination;
+    NSLog(@"%@", train.destination);
     return cell;
 }
 
@@ -83,6 +89,43 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+#pragma mark - RESTKit
+
+- (void)requestData {
+    
+    [[RKObjectManager sharedManager]
+     getObjectsAtPath:@""
+     parameters:nil
+     success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+         //articles have been saved in core data by now
+         [self fetchStationsFromContext];
+     }
+     failure: ^(RKObjectRequestOperation *operation, NSError *error) {
+         RKLogError(@"Load failed with error: %@", error);
+     }
+     ];
+    
+}
+
+- (void)fetchStationsFromContext {
+    
+    NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Station"];
+    
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    fetchRequest.sortDescriptors = @[descriptor];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    Station *stationList = [fetchedObjects firstObject];
+    
+    self.departures = [stationList.departures allObjects];
+    
+    [self.tableView reloadData];
+    
 }
 
 @end

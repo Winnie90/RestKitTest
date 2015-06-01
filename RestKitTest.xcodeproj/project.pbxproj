@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E5893374C4F3DFBADF4B16A /* libPods-RestKitTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C030B5C4114BA75908D062 /* libPods-RestKitTest.a */; };
 		8388D0031B175DCC00812F37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388D0021B175DCC00812F37 /* main.m */; };
 		8388D0061B175DCC00812F37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388D0051B175DCC00812F37 /* AppDelegate.m */; };
 		8388D0091B175DCC00812F37 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388D0081B175DCC00812F37 /* MasterViewController.m */; };
@@ -15,6 +16,9 @@
 		8388D0111B175DCC00812F37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8388D0101B175DCC00812F37 /* Images.xcassets */; };
 		8388D0141B175DCC00812F37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8388D0121B175DCC00812F37 /* LaunchScreen.xib */; };
 		8388D0201B175DCC00812F37 /* RestKitTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388D01F1B175DCC00812F37 /* RestKitTestTests.m */; };
+		8388D02B1B175DF200812F37 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8388D0291B175DF200812F37 /* DataModel.xcdatamodeld */; };
+		8388D0301B1760EA00812F37 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388D02D1B1760EA00812F37 /* Train.m */; };
+		8388D0311B1760EA00812F37 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388D02F1B1760EA00812F37 /* Station.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3286805736741CD4BAF1FFA9 /* Pods-RestKitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestKitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestKitTest/Pods-RestKitTest.debug.xcconfig"; sourceTree = "<group>"; };
 		8388CFFD1B175DCC00812F37 /* RestKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8388D0011B175DCC00812F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8388D0021B175DCC00812F37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +48,13 @@
 		8388D0191B175DCC00812F37 /* RestKitTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestKitTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8388D01E1B175DCC00812F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8388D01F1B175DCC00812F37 /* RestKitTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestKitTestTests.m; sourceTree = "<group>"; };
+		8388D02A1B175DF200812F37 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		8388D02C1B1760EA00812F37 /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
+		8388D02D1B1760EA00812F37 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
+		8388D02E1B1760EA00812F37 /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		8388D02F1B1760EA00812F37 /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		8779F39B8C78A022E96D4D6F /* Pods-RestKitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestKitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RestKitTest/Pods-RestKitTest.release.xcconfig"; sourceTree = "<group>"; };
+		E0C030B5C4114BA75908D062 /* libPods-RestKitTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RestKitTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5893374C4F3DFBADF4B16A /* libPods-RestKitTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +76,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23972C856ECA427B981618B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3286805736741CD4BAF1FFA9 /* Pods-RestKitTest.debug.xcconfig */,
+				8779F39B8C78A022E96D4D6F /* Pods-RestKitTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8388CFF41B175DCC00812F37 = {
 			isa = PBXGroup;
 			children = (
 				8388CFFF1B175DCC00812F37 /* RestKitTest */,
 				8388D01C1B175DCC00812F37 /* RestKitTestTests */,
 				8388CFFE1B175DCC00812F37 /* Products */,
+				23972C856ECA427B981618B1 /* Pods */,
+				CF95F37531350C79AB84C3DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +118,11 @@
 				8388D0101B175DCC00812F37 /* Images.xcassets */,
 				8388D0121B175DCC00812F37 /* LaunchScreen.xib */,
 				8388D0001B175DCC00812F37 /* Supporting Files */,
+				8388D0291B175DF200812F37 /* DataModel.xcdatamodeld */,
+				8388D02C1B1760EA00812F37 /* Train.h */,
+				8388D02D1B1760EA00812F37 /* Train.m */,
+				8388D02E1B1760EA00812F37 /* Station.h */,
+				8388D02F1B1760EA00812F37 /* Station.m */,
 			);
 			path = RestKitTest;
 			sourceTree = "<group>";
@@ -124,6 +153,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CF95F37531350C79AB84C3DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0C030B5C4114BA75908D062 /* libPods-RestKitTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8388D0231B175DCC00812F37 /* Build configuration list for PBXNativeTarget "RestKitTest" */;
 			buildPhases = (
+				0458BD8DEE5B34C62D3FCCA6 /* Check Pods Manifest.lock */,
 				8388CFF91B175DCC00812F37 /* Sources */,
 				8388CFFA1B175DCC00812F37 /* Frameworks */,
 				8388CFFB1B175DCC00812F37 /* Resources */,
+				1B38964E784F4782207AE5C6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,14 +258,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0458BD8DEE5B34C62D3FCCA6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1B38964E784F4782207AE5C6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestKitTest/Pods-RestKitTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8388CFF91B175DCC00812F37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8388D0301B1760EA00812F37 /* Train.m in Sources */,
 				8388D0061B175DCC00812F37 /* AppDelegate.m in Sources */,
+				8388D02B1B175DF200812F37 /* DataModel.xcdatamodeld in Sources */,
 				8388D0091B175DCC00812F37 /* MasterViewController.m in Sources */,
 				8388D0031B175DCC00812F37 /* main.m in Sources */,
+				8388D0311B1760EA00812F37 /* Station.m in Sources */,
 				8388D00C1B175DCC00812F37 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +426,7 @@
 		};
 		8388D0241B175DCC00812F37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3286805736741CD4BAF1FFA9 /* Pods-RestKitTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RestKitTest/Info.plist;
@@ -361,6 +437,7 @@
 		};
 		8388D0251B175DCC00812F37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8779F39B8C78A022E96D4D6F /* Pods-RestKitTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RestKitTest/Info.plist;
@@ -422,6 +499,7 @@
 				8388D0251B175DCC00812F37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8388D0261B175DCC00812F37 /* Build configuration list for PBXNativeTarget "RestKitTestTests" */ = {
 			isa = XCConfigurationList;
@@ -430,8 +508,22 @@
 				8388D0281B175DCC00812F37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8388D0291B175DF200812F37 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8388D02A1B175DF200812F37 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 8388D02A1B175DF200812F37 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8388CFF51B175DCC00812F37 /* Project object */;
 }

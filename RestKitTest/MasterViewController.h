@@ -10,6 +10,7 @@
 
 @interface MasterViewController : UITableViewController
 
+@property NSArray *departures;
 
 @end
 
